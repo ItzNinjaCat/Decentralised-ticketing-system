@@ -80,7 +80,7 @@ function Offer({ offer }) {
   }
   return (
     <div className="m-3">
-      {offer.event.startTime < +new Date() ? (
+      {Number(offer.event.startTime) < +new Date() ? (
         <div className="d-flex justify-content-center">
           <p className="text-danger">Expired</p>
         </div>

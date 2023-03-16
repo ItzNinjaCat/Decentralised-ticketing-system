@@ -199,7 +199,7 @@ function EventDashboard() {
                 [], {year: "numeric", month: "numeric", day: "numeric", hour: '2-digit', minute:'2-digit'}
               )}
             </p>
-            {event.endTime === 0 ? null : (
+            {Number(event.endTime) === 0 ? null : (
               <p>
                 <span className="text-bold">End time:</span>
                 {

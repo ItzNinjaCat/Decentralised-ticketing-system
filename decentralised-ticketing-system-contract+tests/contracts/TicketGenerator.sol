@@ -570,10 +570,13 @@ contract TicketGenerator is AccessControl, ERC721URIStorage {
     require(!tickets[_ticketId].used, 'Ticket is already used');
     require(events[tickets[_ticketId].eventId].organizer == msg.sender, 'Not the organizer');
     if (events[tickets[_ticketId].eventId].endTime != 0) {
-      require(block.timestamp < events[tickets[_ticketId].eventId].endTime, 'Event has ended');
+      require(
+        block.timestamp < events[tickets[_ticketId].eventId].endTime / 1000,
+        'Event has ended'
+      );
     }
     require(
-      block.timestamp >= events[tickets[_ticketId].eventId].startTime,
+      block.timestamp >= events[tickets[_ticketId].eventId].startTime / 1000,
       'Event has not started'
     );
     tickets[_ticketId].usable = false;

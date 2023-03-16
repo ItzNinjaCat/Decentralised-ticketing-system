@@ -66,7 +66,7 @@ function Event() {
                         ${new Date(Number(data.event.startTime)).toLocaleTimeString().slice(0, -3)}
                         ${`
                             ${
-                              data.event.endTime === 0
+                              Number(data.event.endTime) === 0
                                 ? ''
                                 : new Date(Number(data.event.endTime)).toLocaleDateString() ===
                                   new Date(Number(data.event.startTime)).toLocaleDateString()

@@ -66,7 +66,7 @@ function EditEvent() {
                 hour: '2-digit',
                 minute: '2-digit',
             }));
-            if (data.event.endTime !== 0) {
+            if (Number(data.event.endTime) !== 0) {
                 setEndTime(new Date(Number(data.event.endTime)).toLocaleTimeString([], {
                     hour: '2-digit',
                     minute: '2-digit',

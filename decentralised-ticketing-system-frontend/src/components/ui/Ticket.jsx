@@ -74,7 +74,7 @@ function Ticket({
                                 }
                                 <p>Event start time: {new Date(Number(event?.startTime)).toLocaleString().slice(0, -3)}</p>
                                 {
-                                    event?.endTime === 0 ? null :
+                                    Number(event?.endTime) === 0 ? null :
                                         <p>Event end time: {new Date(Number(event?.endTime)).toLocaleString().slice(0, -3)}</p>
                                 }
                         </div>

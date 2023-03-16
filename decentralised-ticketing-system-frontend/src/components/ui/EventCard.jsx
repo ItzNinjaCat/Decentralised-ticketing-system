@@ -37,7 +37,7 @@ function EventCard({ name, location, imagesCid, url, startTime, endTime }) {
                         ${new Date(Number(startTime)).toLocaleTimeString().slice(0, -3)}
                         ${`
                             ${
-                              endTime === 0
+                              Number(endTime) === 0
                                 ? ''
                                 : new Date(Number(endTime)).toLocaleDateString() ===
                                   new Date(Number(startTime)).toLocaleDateString()
